@@ -176,6 +176,7 @@
                 <th>tussenvoegsel</th>
                 <th>achternaam</th>
                 <th>leeftijd</th>
+                <th></th>
               </tr>";
 
         while ( $records = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -186,6 +187,11 @@
                         <td>".$records["infix"]."</td>
                         <td>".$records["lastname"]."</td>
                         <td>".$records["age"]."</td>
+                        <td>
+                          <a href='remove_record.php?id=".$records["id"]."'>
+                            <img src='./images/b_drop.png' alt='kruis'>
+                          </a>
+                        </td>
                 </tr>";
         }
 
