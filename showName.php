@@ -169,7 +169,7 @@
 
        //var_dump($result);
 
-       $records = mysqli_fetch_array($result);
+       $records = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
        echo "<table>";
        echo "<tr>
@@ -191,6 +191,18 @@
        //echo $records["id"];
        var_dump($records);
 
-       echo "De code staat vanaf nu op github.com onder gebruiker rra-am1a-2016 repository blok1-web-php";
+       echo "De code staat vanaf nu op github.com onder gebruiker rra-am1a-2016 repository blok1-web-php<br>";
 
+       echo "1<br>";
+       echo "2<br>";
+       echo "3<br>";
+       echo "4<br>";
+       echo "5<br>";
+
+       $getal = 1;
+       while (true /*voorwaarde */ )
+       {
+               // Code wordt uitgevoerd
+               echo "nr: ".$getal."<br>";
+       }
 ?>
