@@ -168,31 +168,34 @@
        $result = mysqli_query($conn, $sql);
 
        //var_dump($result);
-
-       $records = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
+      
        echo "<table>";
-       echo "<tr>
+        echo "<tr>
                 <th>id</th>
                 <th>voornaam</th>
                 <th>tussenvoegsel</th>
                 <th>achternaam</th>
                 <th>leeftijd</th>
-             </tr>
-             <tr>
-                <td>".$records["id"]."</td>
-                <td>".$records["firstname"]."</td>
-                <td>".$records["infix"]."</td>
-                <td>".$records["lastname"]."</td>
-                <td>".$records["age"]."</td>
-             </tr>";
+              </tr>";
+
+        while ( $records = mysqli_fetch_array($result, MYSQLI_ASSOC))
+        {
+                echo "<tr>
+                        <td>".$records["id"]."</td>
+                        <td>".$records["firstname"]."</td>
+                        <td>".$records["infix"]."</td>
+                        <td>".$records["lastname"]."</td>
+                        <td>".$records["age"]."</td>
+                </tr>";
+        }
+
        echo "</table>";
 
        //echo $records["id"];
-       var_dump($records);
-
+       
        echo "De code staat vanaf nu op github.com onder gebruiker rra-am1a-2016 repository blok1-web-php<br>";
 
+       /*
        echo "1<br>";
        echo "2<br>";
        echo "3<br>";
@@ -200,9 +203,34 @@
        echo "5<br>";
 
        $getal = 1;
-       while (true /*voorwaarde */ )
+       while ( $getal < 1200 )
        {
                // Code wordt uitgevoerd
                echo "nr: ".$getal."<br>";
+               $getal = $getal + 1;
        }
+       */
 ?>
+
+<style>
+*
+{
+        font-family: Verdana, Arial;
+        padding: 0;
+        margin: 0;
+}
+
+h3
+{
+        border: 2px solid blue;
+
+}
+
+table, td, th 
+{
+        border: 2px solid grey;
+        padding:0.5em 1em;
+        border-collapse: collapse;   
+}
+</style>
+
