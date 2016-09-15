@@ -191,4 +191,6 @@
        //echo $records["id"];
        var_dump($records);
 
+       echo "De code staat vanaf nu op github.com onder gebruiker rra-am1a-2016 repository blok1-web-php";
+
 ?>
