@@ -138,7 +138,7 @@
         */
         //var_dump($_POST);
 
-        echo "Gegevens uit de tabel users: ";
+        
         
         
         $servername = "localhost";
@@ -161,45 +161,12 @@
        // echo $sql;
        mysqli_query($conn, $sql );
 
+       echo "<br><a href='showRecords.php'>records uit de tabel users</a>";
 
-       $sql = "SELECT `id`, `firstname`, `infix`, `lastname`, `age`
-               FROM   `users`";
-
-       $result = mysqli_query($conn, $sql);
-
-       //var_dump($result);
-      
-       echo "<table>";
-        echo "<tr>
-                <th>id</th>
-                <th>voornaam</th>
-                <th>tussenvoegsel</th>
-                <th>achternaam</th>
-                <th>leeftijd</th>
-                <th></th>
-              </tr>";
-
-        while ( $records = mysqli_fetch_array($result, MYSQLI_ASSOC))
-        {
-                echo "<tr>
-                        <td>".$records["id"]."</td>
-                        <td>".$records["firstname"]."</td>
-                        <td>".$records["infix"]."</td>
-                        <td>".$records["lastname"]."</td>
-                        <td>".$records["age"]."</td>
-                        <td>
-                          <a href='remove_record.php?id=".$records["id"]."'>
-                            <img src='./images/b_drop.png' alt='kruis'>
-                          </a>
-                        </td>
-                </tr>";
-        }
-
-       echo "</table>";
-
+       
        //echo $records["id"];
        
-       echo "De code staat vanaf nu op github.com onder gebruiker rra-am1a-2016 repository blok1-web-php<br>";
+       //echo "De code staat vanaf nu op github.com onder gebruiker rra-am1a-2016 repository blok1-web-php<br>";
 
        /*
        echo "1<br>";
@@ -215,28 +182,6 @@
                echo "nr: ".$getal."<br>";
                $getal = $getal + 1;
        }
+       
        */
 ?>
-
-<style>
-*
-{
-        font-family: Verdana, Arial;
-        padding: 0;
-        margin: 0;
-}
-
-h3
-{
-        border: 2px solid blue;
-
-}
-
-table, td, th 
-{
-        border: 2px solid grey;
-        padding:0.5em 1em;
-        border-collapse: collapse;   
-}
-</style>
-
