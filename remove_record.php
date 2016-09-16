@@ -1,6 +1,6 @@
 <?php
-    echo "Het aangeklikt record heeft id = ".$_GET["id"];
-    var_dump($_GET);
+    echo "U heeft het record met id = ".$_GET["id"]." succesvol gedelete";
+    //var_dump($_GET);
 
     $servername = "localhost";
     $username = "root";
@@ -11,8 +11,11 @@
 
     $sql = "DELETE FROM `users` WHERE `id` = '".$_GET["id"]."'";
 
-    echo $sql;
+    //echo $sql;
         
-       // echo $sql;
-       mysqli_query($conn, $sql );
+    // echo $sql;
+    mysqli_query($conn, $sql );
+
+    header("refresh: 2.5; url=showRecords.php");
+    
 ?>
