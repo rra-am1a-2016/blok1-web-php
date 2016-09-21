@@ -163,7 +163,7 @@
 
        echo "<br><a href='showRecords.php'>records uit de tabel users</a>";
 
-       header("refresh: ; url=index.html");
+       //header("refresh: ; url=index.html");
        //echo $records["id"];
        
        //echo "De code staat vanaf nu op github.com onder gebruiker rra-am1a-2016 repository blok1-web-php<br>";

@@ -1,21 +1,13 @@
 <?php
-    echo "U heeft het record met id = ".$_GET["id"]." succesvol gedelete";
-    //var_dump($_GET);
+    // In dit bestand wordt er contact gemaak met de mysql-server.
+    include("connect_db.php");
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "am1a_2016_loginregistration";
-
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-
+    // Deze query verwijderd een record met een gegeven id.
     $sql = "DELETE FROM `users` WHERE `id` = '".$_GET["id"]."'";
 
-    //echo $sql;
-        
-    // echo $sql;
+    // De query wordt naar de database verstuurd.
     mysqli_query($conn, $sql );
 
-    header("refresh: 2.5; url=showRecords.php");
-    
+    // Deze header functie stuurt ons direct door naar de ingestelde pagina.
+    header("location: showRecords.php");    
 ?>
