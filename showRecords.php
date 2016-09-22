@@ -2,7 +2,6 @@
    // Maak contact met de mysql-server
    include("connect_db.php");
 
-
    if ( !empty($_POST))
    {
         // Maak een INSERT query om het gegeven naar de database te schrijven.
@@ -37,6 +36,7 @@
                    <th>achternaam</th>
                    <th>leeftijd</th>
                    <th></th>
+                   <th></th>
                </tr>";
                 while ( $records = mysqli_fetch_array($result, MYSQLI_ASSOC))
                 {
@@ -47,9 +47,14 @@
                                         <td>".$records["lastname"]."</td>
                                         <td>".$records["age"]."</td>
                                         <td>
-                                        <a href='remove_record.php?id=".$records["id"]."'>
-                                        <img src='./images/b_drop.png' alt='kruis'>
-                                        </a>
+                                            <a href='remove_record.php?id=".$records["id"]."'>
+                                                <img src='./images/b_drop.png' alt='kruis'>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href='update_record.php?id=".$records["id"]."'>
+                                                <img src='./images/b_edit.png' alt='pencil'>
+                                            </a>
                                         </td>
                                    </tr>";
                 }
@@ -66,6 +71,7 @@
    </head>
    <body>
         <?php echo $table; ?>
+        <p>klik <a href='index.html'>hier</a> om terug te gaan naar het formulier<p>
    </body>
 </html>
 
