@@ -1,5 +1,5 @@
 <?php
-    // In dit bestand wordt er contact gemaak met de mysql-server.
+    // In dit bestand wordt er contact gemaakt met de mysql-server.
     include("connect_db.php");
 
     // Deze query verwijderd een record met een gegeven id.
