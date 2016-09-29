@@ -12,11 +12,12 @@
         </head>
         <body>
         <h1>NAW gegevens</h1>
+        
         <form action="showRecords.php" method="post">
             <table>
                 <tr>
                     <td>voornaam:</td>
-                    <td><input type="text" name="firstname"></td>
+                    <td><input type="text" name="firstname" ></td>
                 </tr>
                 <tr>
                     <td>tussenvoegsel:</td>
@@ -39,8 +40,8 @@
                 <tr>
                     <td>Favoriete games: </td>
                     <td>
-                        <input type="checkbox" name="game1" value="Tomb Raider">Tomb Raider<br>
                         <input type="checkbox" name="game2" value="Pac Man">Pac Man<br>
+                        <input type="checkbox" name="game1" value="Tomb Raider">Tomb Raider<br>
                         <input type="checkbox" name="game3" value="Kings Valley">Kings Valley<br>
                         <input type="checkbox" name="game4" value="Minecraft">Minecraft<br>
                         <input type="checkbox" name="game5" value="Assassins Creed">Assassins Creed                        
@@ -55,6 +56,7 @@
                 </tr>
             </table>
         </form>
+        
         <br><a href='showRecords.php'>records uit de tabel users</a>
     </body>
 </html>

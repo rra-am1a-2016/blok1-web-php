@@ -2,8 +2,28 @@
    // Maak contact met de mysql-server
    include("connect_db.php");
 
-   if ( !empty($_POST))
+   if ( isset($_POST) && !empty($_POST))
    {
+       function sanitize($text)
+       {
+           // Haalt spaties, \n, returns, enz.. links en rechts weg
+           $text = trim($text);
+
+           // Verwijdert html en php tags
+           $text = strip_tags($text);
+
+           // escaped kritische tekens zoals ' en "
+           $text = addslashes($text);
+           return $text;
+       }
+
+       $firstname = sanitize($_POST["firstname"]);
+       $infix = sanitize($_POST["infix"]);
+       $lastname = sanitize($_POST["lastname"]);
+       $age = sanitize($_POST["age"]);
+       
+
+       
         // Maak een INSERT query om het gegeven naar de database te schrijven.
         $sql = "INSERT INTO `users` (`id`,
                                         `firstname`,
@@ -11,11 +31,12 @@
                                         `lastname`,
                                         `age`)
                 VALUES              (NULL,
-                                        '".$_POST["firstname"]."',
-                                        '".$_POST["infix"]."',
-                                        '".$_POST["lastname"]."',
-                                        ".$_POST["age"].")";
+                                        '".$firstname."',
+                                        '".$infix."',
+                                        '".$lastname."',
+                                        ".$age.")";
             // Stuur de query naar de database
+            //echo $sql;exit();
             mysqli_query($conn, $sql );
    } 
 
