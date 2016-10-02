@@ -20,6 +20,7 @@
        $firstname = sanitize($_POST["firstname"]);
        $infix = sanitize($_POST["infix"]);
        $lastname = sanitize($_POST["lastname"]);
+       $password = sanitize($_POST["password"]);
        $age = sanitize($_POST["age"]);
        
 
@@ -29,11 +30,13 @@
                                         `firstname`,
                                         `infix`,
                                         `lastname`,
+                                        `password`,
                                         `age`)
                 VALUES              (NULL,
                                         '".$firstname."',
                                         '".$infix."',
                                         '".$lastname."',
+                                        '".$password."',
                                         ".$age.")";
             // Stuur de query naar de database
             //echo $sql;exit();

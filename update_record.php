@@ -100,9 +100,6 @@
                 </tr>
             </table>
         </form>
-
-        <b>dit is tekst die vet wordt weergegeven</b>
-        &lt;b&gt;Dit is tekst die vet wordt weergegeven&lt;&frasl;b&gt;&apos;
     </body>
 </html>
 
